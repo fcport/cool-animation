@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+body {
+  background-color: rgb(35, 35, 35);
+  text-align: center;
+  font-family: Poppins;
+}
+h1 {
+  color: rgb(225, 225, 225);
+}
+img {
+  max-width: 50%;
+  display: block;
+  margin: auto;
+}
+.mask-container {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.color-image {
+  position: absolute;
+  background-image: url("./public/img-colored.png");
+  inset: 0;
+  background-size: cover;
+  max-width: 50%;
+  margin: auto;
+
+  mask-image: url("./public/frames.png");
+  -webkit-mask-image: url("./public/frames.png");
+
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  mask-position: 0% 0%;
+  -webkit-mask-position: 0% 0%;
+
+  animation: addColor 1500ms steps(22) forwards;
+  animation-delay: 1000ms;
+}
+
+.mask-animation {
+  animation: addColor 100ms steps(23) forwards;
+}
+
+@keyframes addColor {
+  0% {
+    mask-position: 0% 0%;
+    -webkit-mask-position: 0% 0%;
+  }
+  100% {
+    mask-position: 100% 0%;
+    -webkit-mask-position: 100% 0%;
+  }
+}
